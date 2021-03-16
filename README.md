@@ -1,2 +1,16 @@
-## api-pix
-Pix-API | [pix.fr](https://pix.fr) | 2021 | non officiel
+# Pix.js
+Bibliothèque non officel de Pix afin de faciliter les appels à l'API de Pix
+
+## Utilisation
+```js
+const pix = require('pix.js')
+
+const username = "Nom d'utilisateur"
+const password = 'Mots de passe'
+
+const main = async () => {
+  const session = await pix.login(username, password)
+}
+
+main()
+```
