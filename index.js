@@ -31,7 +31,7 @@ module.exports.login = async (username, password) => {
 
   await axios.get('https://app.pix.fr/api/users/me', config)
     .then(response => {
-      session.me = response.data.data
+      session.account = response.data.data
     })
     .catch(error => {
       console.error(error)
