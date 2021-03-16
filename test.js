@@ -2,7 +2,9 @@ const pix = require('.')
 
 const main = async () => {
   const session = await pix.login(process.env.USERNAME, process.env.PASSWORD)
-  console.log(session)
+
+  const account = await session.account()
+  console.log(account)
 }
 
 main()

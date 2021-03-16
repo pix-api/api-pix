@@ -3,12 +3,12 @@ const params = new URLSearchParams()
 params.append('grant_type', 'password')
 params.append('scope', 'mon-pix')
 
-let config = {
+const config = {
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
   }
 }
-const session = {}
+let session
 
 module.exports.login = async (username, password) => {
   params.append('username', username)
@@ -16,22 +16,8 @@ module.exports.login = async (username, password) => {
 
   await axios.post('https://app.pix.fr/api/token', params, config)
     .then(response => {
-      const token = response.data.access_token
-
-      session.token = token
-      config = {
-        headers: {
-          Authorization: 'Bearer ' + token
-        }
-      }
-    })
-    .catch(error => {
-      console.error(error)
-    })
-
-  await axios.get('https://app.pix.fr/api/users/me', config)
-    .then(response => {
-      session.account = response.data.data
+      const data = response.data
+      session = require('./session')(data.access_token, data.user_id)
     })
     .catch(error => {
       console.error(error)
