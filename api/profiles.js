@@ -11,7 +11,7 @@ module.exports = async (token, userId) => {
 
  await axios.get(`https://app.pix.fr/api/users/${userId}/profile`, config)
     .then(response => {
-      session.profile = response.data.included.map(res => res.attributes)
+      profile = response.data.included.map(res => res.attributes)
     })
     .catch(error => {
       console.error(error)
