@@ -1,5 +1,5 @@
 # Pix.js
-Bibliothèque non officel de Pix afin de faciliter les appels à l'API de Pix
+Bibliothèque non officel de Pix afin de faciliter les appels à l'API de Pix sur des projets Node.js
 
 ## Utilisation
 ```js
