@@ -17,7 +17,6 @@ module.exports = async (token, userId) => {
       console.error(error)
     })
 
-  delete account.relationships
 
   return profile
 }
