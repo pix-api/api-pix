@@ -5,6 +5,8 @@ const main = async () => {
 
   const account = await session.account()
   console.log(account)
+  const profile = await session.profiles()
+  console.log(profile)
 }
 
 main()
