@@ -12,6 +12,7 @@ module.exports = async (token, userId) => {
  await axios.get(`https://app.pix.fr/api/users/${userId}/profile`, config)
     .then(response => {
       profile = response.data.included.map(res => res.attributes)
+      profile.score = response.data.data.attributes
     })
     .catch(error => {
       console.error(error)
