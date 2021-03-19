@@ -16,7 +16,7 @@ const main = async () => {
   const profile = await session.profile()
   console.log(profile)
   
-  //Afficher les détatils la/des certification(s)
+  //Afficher les détatils de la/des certification(s)
   const certification = await session.certification()
   console.log(certification)
 }
