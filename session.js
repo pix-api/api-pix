@@ -5,7 +5,7 @@ module.exports = (token, userId) => {
   session.token = token
   session.userId = userId
 
-  fs.readdirSync('./api')
+  fs.readdirSync(__dirname + '/api')
     .filter(file => (file.indexOf('.') !== 0) && (file.endsWith('.js')))
     .forEach(file => {
       file = file.slice(0, -3)
