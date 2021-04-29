@@ -3,7 +3,7 @@ Bibliothèque non officel de Pix afin de faciliter les appels à l'API de Pix su
 
 ## Utilisation
 ```js
-const pix = require('.')
+const pix = require('api-pix')
 
 const main = async () => {
   const session = await pix.login(process.env.USERNAME, process.env.PASSWORD)
